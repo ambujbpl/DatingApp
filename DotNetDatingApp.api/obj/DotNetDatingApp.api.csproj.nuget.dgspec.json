@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DotNetDatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj": {}
+    "D:\\DatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj": {}
   },
   "projects": {
-    "D:\\DotNetDatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj": {
+    "D:\\DatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNetDatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj",
+        "projectUniqueName": "D:\\DatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj",
         "projectName": "DotNetDatingApp.api",
-        "projectPath": "D:\\DotNetDatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj",
+        "projectPath": "D:\\DatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj",
         "packagesPath": "C:\\Users\\Thimk Recycling\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNetDatingApp\\DotNetDatingApp.api\\obj\\",
+        "outputPath": "D:\\DatingApp\\DotNetDatingApp.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Thimk Recycling\\AppData\\Roaming\\NuGet\\NuGet.Config",

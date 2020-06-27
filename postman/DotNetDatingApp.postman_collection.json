@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "1c172164-0045-40b2-91c4-d4400d00fcee",
+		"name": "DotNetDatingApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values"
+					]
+				},
+				"description": "http://localhost:5000/api/values"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Value by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values"
+					]
+				},
+				"description": "http://localhost:5000/api/values/1"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
