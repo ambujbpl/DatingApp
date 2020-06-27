@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Thimk Recycling\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Thimk Recycling\\.nuget\\packages"
+    ]
+  }
+}

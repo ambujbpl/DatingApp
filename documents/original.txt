@@ -1,0 +1,52 @@
+Source code repostitories:
+
+ASP.NET Core 2.2 version: https://github.com/TryCatchLearn/DatingApp
+
+ASP.NET Core 3.0 version: https://github.com/TryCatchLearn/DatingApp30
+
+
+Software Dependancy
+1 https://dotnet.microsoft.com/download  Download dotnet sdk version 3.0
+dotnet --info
+dotnet --version
+
+2 Nodejs
+node --version
+npm --version
+
+3 VSC
+
+4 https://sqlitebrowser.org/dl/  sqlite link for download
+
+5 dotnet -h
+
+6 dotnet new -h
+
+7 dotnet new webapi -h
+
+8 dotnet new webapi -n DotNetDatingApp.api
+
+Visual studio plginn for development 
+a) C# for Visual Studio Code (powered by OmniSharp)
+b) C# Extensions (for create quick class in c#)
+c) NuGet Package Manager(for dependancy injection)
+  
+ctrl + shift + P (search for reload- to reload developer window)
+
+Code(top button + prefrences ) type excludes
+
+dotnet run (run the application)
+dotnet watch run (run the application with tracking live changes same as nodemon in nodejs)
+
+resume video 7:- Different bw .net core 2.2 and 3.0
+
+ 
+Route
+http://localhost:5000/api/values
+throw new Exception("This is test exception"); 
+
+Migration database
+dotnet tool install --global dotnet-ef
+dotnet ef -h (help)
+dotnet ef migrations add InitialCreate
+dotnet ef database update 
