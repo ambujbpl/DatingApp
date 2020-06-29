@@ -50,3 +50,5 @@ dotnet tool install --global dotnet-ef
 dotnet ef -h (help)
 dotnet ef migrations add InitialCreate
 dotnet ef database update 
+dotnet ef migrations add AddedUserEntity
+dotnet ef database update
