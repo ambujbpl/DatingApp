@@ -43,7 +43,7 @@ namespace DotNetDatingApp.api.Controllers
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
             // try {
-                throw new Exception("test exception for handling exception module");
+                // throw new Exception("test exception for handling exception module");
                 var userFromRepo = await _repo.Login(userForLoginDto.username.ToLower(), userForLoginDto.password);
                 if (userFromRepo == null)
                     return Unauthorized();
