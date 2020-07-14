@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,8 @@ import { AlertifyService } from '../_services/alertify.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(public authService: AuthService, private alertify: AlertifyService) { }
+  constructor(public authService: AuthService, private alertify: AlertifyService,
+    private router: Router) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -22,8 +24,9 @@ export class NavComponent implements OnInit {
       this.alertify.success('Logged in successfully');
     }, error => {
       this.alertify.error(error);
+    }, () => {
+      this.router.navigate(['/members']);
     });
-    console.log('submitted value is :- ', this.model);
   }
 
   // tslint:disable-next-line: typedef
@@ -36,6 +39,7 @@ export class NavComponent implements OnInit {
   // tslint:disable-next-line: typedef
   logout() {
     localStorage.removeItem('token');
-    this.alertify.message('logout successfully');
+    this.alertify.message('you have logout successfully');
+    this.router.navigate(['/home']);
   }
 }
