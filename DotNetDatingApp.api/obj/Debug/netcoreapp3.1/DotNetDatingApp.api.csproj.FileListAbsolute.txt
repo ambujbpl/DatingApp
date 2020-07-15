@@ -100,3 +100,4 @@ D:\DatingApp\DotNetDatingApp.api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Au
 D:\DatingApp\DotNetDatingApp.api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 D:\DatingApp\DotNetDatingApp.api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\DatingApp\DotNetDatingApp.api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\DatingApp\DotNetDatingApp.api\bin\Debug\netcoreapp3.1\Data\UserSeedData.json
