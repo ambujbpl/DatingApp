@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FpQH81TZjnvRbJcDwFrHFHwQAOc82RJYz1WKT7EvEePp90RCYxoje4vuDAvhtbZZOixAGBIMSBCKqd+zVLhTNA==",
+  "dgSpecHash": "wV04BxnnHw6IAS07qEaaayyr+GFSUyOxQ1MR8CrE4VsNnliD/0AOqFE1I3KANvNmi4A/bHjMaSLMcPp3sBHQ6w==",
   "success": true,
   "projectFilePath": "D:\\DatingApp\\DotNetDatingApp.api\\DotNetDatingApp.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thimk Recycling\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Thimk Recycling\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\Thimk Recycling\\.nuget\\packages\\cloudinarydotnet\\1.11.0\\cloudinarydotnet.1.11.0.nupkg.sha512",
     "C:\\Users\\Thimk Recycling\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
     "C:\\Users\\Thimk Recycling\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.0\\microsoft.aspnetcore.jsonpatch.3.1.0.nupkg.sha512",
     "C:\\Users\\Thimk Recycling\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.0\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.0.nupkg.sha512",
