@@ -10,12 +10,17 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
   model: any = {};
+  photoUrl: string;
 
-  constructor(public authService: AuthService, private alertify: AlertifyService,
-    private router: Router) { }
+  constructor(
+    public authService: AuthService,
+    private alertify: AlertifyService,
+    private router: Router
+  ) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
+    this.authService.currentPhotoUrl.subscribe(photoUrl =>  this.photoUrl = photoUrl)
   }
 
   // tslint:disable-next-line: typedef
@@ -38,7 +43,9 @@ export class NavComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   logout() {
-    localStorage.removeItem('token');
+    localStorage.clear();
+    this.authService.decodedToken = null;
+    this.authService.currentUser = null;
     this.alertify.message('you have logout successfully');
     this.router.navigate(['/home']);
   }
