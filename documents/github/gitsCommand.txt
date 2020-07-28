@@ -1,0 +1,8 @@
+//To prevent add new changes on github
+
+git update-index --assume-unchanged <filename>
+git update-index --no-assume-unchanged <filename>
+
+
+git update-index --assume-unchanged DotNetDatingApp.api\appsettings.json
+git update-index --no-assume-unchanged DotNetDatingApp.api\appsettings.json
