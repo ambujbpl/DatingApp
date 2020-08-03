@@ -43,7 +43,7 @@ namespace DotNetDatingApp.api.Helpers
             CreateMap<Photo, PhotoForReturnDto>();
             CreateMap<PhotoForCreationDto, Photo>();
             CreateMap<UserForUpdateDto, User>();
-        //     CreateMap<UserForRegisterDto, User>();
+            CreateMap<UserForRegisterDto, User>();
         //     CreateMap<MessageForCreationDto, Message>().ReverseMap();
         //     CreateMap<Message, MessageToReturnDto>()
         //         .ForMember(m => m.SenderPhotoUrl, opt => opt
