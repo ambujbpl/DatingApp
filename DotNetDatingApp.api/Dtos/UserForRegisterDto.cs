@@ -19,7 +19,7 @@ namespace DotNetDatingApp.api.Dtos
         public string knownAs { get; set; }
 
         [Required]
-        public DateTime dob { get; set; }
+        public DateTime dateOfBirth { get; set; }
 
         [Required]
         public string city { get; set; }
