@@ -20,5 +20,7 @@ namespace DotNetDatingApp.api.Models
         public string city { get; set; }
         public string country { get; set; }
         public ICollection<Photo> photos { get; set; }
+        public virtual ICollection<Like> Likers { get; set; }
+        public virtual ICollection<Like> Likees { get; set; }
     }
 }

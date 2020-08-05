@@ -66,12 +66,7 @@ namespace DotNetDatingApp.api.Data
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
-        } 
-        // public async Task<Like> GetLike(int userId, int recipientId)
-        // {
-        //     return await _context.Likes.FirstOrDefaultAsync(u =>
-        //         u.LikerId == userId && u.LikeeId == recipientId);
-        // }
+        }
 
         public async Task<Photo> GetMainPhotoForUser(int userId)
         {
@@ -83,6 +78,13 @@ namespace DotNetDatingApp.api.Data
             var photo = await _context.Photos.FirstOrDefaultAsync(p => p.id == id);
 
             return photo;
+        }
+
+ 
+        public async Task<Like> GetLike(int userId, int recipientId)
+        {
+            return await _context.Likes.FirstOrDefaultAsync(u =>
+                u.LikerId == userId && u.LikeeId == recipientId);
         }
 
         // public async Task<User> GetUser(int id)
