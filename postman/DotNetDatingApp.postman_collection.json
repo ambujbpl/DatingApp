@@ -29,6 +29,16 @@
 		{
 			"name": "Get Value by id",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0IiwidW5pcXVlX25hbWUiOiJzaWRkaGkiLCJuYmYiOjE1OTM0OTAwNjEsImV4cCI6MTU5MzU3NjQ2MSwiaWF0IjoxNTkzNDkwMDYxfQ.AXorW1kPsOB3gjmCvgITMD8SQtVsQhr85WeRzAUQxPW7Rp_0J-Kvawhg6oCkpu3LhBHshOdGR_1UWN8VAQRb1g",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -44,6 +54,378 @@
 					]
 				},
 				"description": "http://localhost:5000/api/values/1"
+			},
+			"response": []
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Kalpana\",\r\n    \"password\":\"Knoah123\",\r\n    \"gender\":\"female\",\r\n    \"knownAs\":\"piddhi\",\r\n    \"dateOfBirth\":\"02/13/1964\",\r\n    \"city\":\"Bhopal\",\r\n    \"country\":\"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				},
+				"description": "http://localhost:5000/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ambuj\",\r\n    \"password\":\"Knoah123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "http://localhost:5000/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsb2xhIiwibmJmIjoxNTk2Nzk1MzA0LCJleHAiOjE1OTY4ODE3MDQsImlhdCI6MTU5Njc5NTMwNH0.Mf_ssGkcNWEda-VM7ZOWPHk4WdIMyFkeveeQyRBj6B3MtFE7GiY5xkVUKOJJFp6gQ-HOrSpi9cJs0Eq91aEeTw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users?Likers=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "Likers",
+							"value": "true"
+						}
+					]
+				},
+				"description": "http://localhost:5000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Update users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsb2xhIiwibmJmIjoxNTk1NzMwMjYxLCJleHAiOjE1OTU4MTY2NjEsImlhdCI6MTU5NTczMDI2MX0.1ESXifv9ZA9-uUDLQVLvKk2ePGmnqHy1WumQoTlqcOSFgg4cQ68i84BMx_QkQnYMZHutqT_CwxJ51dLqHt1r_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"introduction\": \"test introduction\",\r\n    \"lookingFor\": \"test looking for\",\r\n    \"interests\": \"tet interests\",\r\n    \"city\": \"Bhopal\",\r\n    \"country\": \"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				},
+				"description": "http://localhost:5000/api/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload photos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsb2xhIiwibmJmIjoxNTk1NzMwMjYxLCJleHAiOjE1OTU4MTY2NjEsImlhdCI6MTU5NTczMDI2MX0.1ESXifv9ZA9-uUDLQVLvKk2ePGmnqHy1WumQoTlqcOSFgg4cQ68i84BMx_QkQnYMZHutqT_CwxJ51dLqHt1r_g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Users/Thimk Recycling/Desktop/AD Logos/ad1.jfif"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/1/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"photos"
+					]
+				},
+				"description": "http://localhost:5000/api/users/1/photos"
+			},
+			"response": []
+		},
+		{
+			"name": "Set A main photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsb2xhIiwibmJmIjoxNTk1OTI3MTU4LCJleHAiOjE1OTYwMTM1NTgsImlhdCI6MTU5NTkyNzE1OH0.E4t7ped3Xza_iQWUX78uf4x-XQ3Xo3dSAXIyrTbhnQGMw133NECnJa8D36Efb8oSPxU_L5iAcMW4wfOLUOustg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/1/photos/11/setMain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"photos",
+						"11",
+						"setMain"
+					]
+				},
+				"description": "http://localhost:5000/api/users/1/photos/11/setMain"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsb2xhIiwibmJmIjoxNTk1OTI3MTU4LCJleHAiOjE1OTYwMTM1NTgsImlhdCI6MTU5NTkyNzE1OH0.E4t7ped3Xza_iQWUX78uf4x-XQ3Xo3dSAXIyrTbhnQGMw133NECnJa8D36Efb8oSPxU_L5iAcMW4wfOLUOustg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/1/photos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"photos",
+						"1"
+					]
+				},
+				"description": "http://localhost:5000/api/users/1/photos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Like the user profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJsb2xhIiwibmJmIjoxNTk2NTg5OTk4LCJleHAiOjE1OTY2NzYzOTgsImlhdCI6MTU5NjU4OTk5OH0.YJvpyge9olCooQTPJ0DE39ErjDC6MWsHxzgCRgb70oiYiiFy_siRKqX-NWR3i0Eskw9NoRBxpSz3BAR2Lf_UIQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/17/like/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"17",
+						"like",
+						"10"
+					]
+				},
+				"description": "http://localhost:5000/api/users/17/like/10"
+			},
+			"response": []
+		},
+		{
+			"name": "get Message ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxNyIsInVuaXF1ZV9uYW1lIjoiYW1idWoiLCJuYmYiOjE1OTY3OTc0MjEsImV4cCI6MTU5Njg4MzgyMSwiaWF0IjoxNTk2Nzk3NDIxfQ.irBCzRNAhOq1tRkUqqXc1AAXliMlqkjPwMRAmitoyxSmNsqs5N0iPrp39QasihKPoNSy7tYIXSFtxHCNzeRSzQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/17/messages/thread/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"17",
+						"messages",
+						"thread",
+						"1"
+					]
+				},
+				"description": "http://localhost:5000/api/users/17/messages/thread/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxNyIsInVuaXF1ZV9uYW1lIjoiYW1idWoiLCJuYmYiOjE1OTY3OTc0MjEsImV4cCI6MTU5Njg4MzgyMSwiaWF0IjoxNTk2Nzk3NDIxfQ.irBCzRNAhOq1tRkUqqXc1AAXliMlqkjPwMRAmitoyxSmNsqs5N0iPrp39QasihKPoNSy7tYIXSFtxHCNzeRSzQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipientId\":\"1\",\r\n    \"content\":\"test Message  from Ambuj to lola\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/17/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"17",
+						"messages"
+					]
+				},
+				"description": "http://localhost:5000/api/users/17/messages"
 			},
 			"response": []
 		}
