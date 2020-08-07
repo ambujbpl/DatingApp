@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using DotNetDatingApp.api.Helpers;
 using DotNetDatingApp.api.Models;
 
-namespace DatingApp.API.Data
+namespace DotNetDatingApp.api.Data
 {
     public interface IDatingRepository
     {
@@ -16,8 +16,8 @@ namespace DatingApp.API.Data
         Task<Photo> GetPhoto(int id);
         Task<Photo> GetMainPhotoForUser(int userId);
         Task<Like> GetLike(int userId, int recipientId);
-        // Task<Message> GetMessage(int id);
-        // Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
-        // Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
+        Task<Message> GetMessage(int id);
+        Task<PagedList<Message>> GetMessagesForUser();
+        Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
     }
 }

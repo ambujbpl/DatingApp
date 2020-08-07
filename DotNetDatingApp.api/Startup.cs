@@ -5,8 +5,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using DatingApp.API.Data;
-using DatingApp.API.Helpers;
 using DotNetDatingApp.api.Data;
 using DotNetDatingApp.api.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

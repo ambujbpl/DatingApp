@@ -4,8 +4,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 // using AutoMapper;
-using DatingApp.API.Data;
-using DatingApp.API.Dtos;
 using DotNetDatingApp.api.Data;
 using DotNetDatingApp.api.Dtos;
 using DotNetDatingApp.api.Helpers;

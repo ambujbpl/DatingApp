@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using DotNetDatingApp.api.Models;
 
-namespace DatingApp.API.Dtos
+namespace DotNetDatingApp.api.Dtos
 {
     public class UserForDetailedDto
     {

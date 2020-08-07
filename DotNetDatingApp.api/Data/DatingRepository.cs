@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DatingApp.API.Data;
+using DotNetDatingApp.api.Data;
 using DotNetDatingApp.api.Helpers;
 using DotNetDatingApp.api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -115,67 +115,10 @@ namespace DotNetDatingApp.api.Data
                 u.LikerId == userId && u.LikeeId == recipientId);
         }
 
-        // public async Task<User> GetUser(int id)
-        // {
-        //     var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
-
-        //     return user;
-        // }
-
-        // public async Task<PagedList<User>> GetUsers(UserParams userParams)
-        // {
-        //     var users = _context.Users.OrderByDescending(u => u.LastActive).AsQueryable();
-
-        //     users = users.Where(u => u.Id != userParams.UserId);
-
-        //     users = users.Where(u => u.Gender == userParams.Gender);
-
-        //     if (userParams.Likers)
-        //     {
-        //         var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
-        //         users = users.Where(u => userLikers.Contains(u.Id));
-        //     }
-
-        //     if (userParams.Likees)
-        //     {
-        //         var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
-        //         users = users.Where(u => userLikees.Contains(u.Id));
-        //     }
-
-        //     if (userParams.MinAge != 18 || userParams.MaxAge != 99)
-        //     {
-        //         var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
-        //         var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
-
-        //         users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
-        //     }
-
-        //     if (!string.IsNullOrEmpty(userParams.OrderBy))
-        //     {
-        //         switch (userParams.OrderBy)
-        //         {
-        //             case "created":
-        //                 users = users.OrderByDescending(u => u.Created);
-        //                 break;
-        //             default:
-        //                 users = users.OrderByDescending(u => u.LastActive);
-        //                 break;
-        //         }
-        //     }
-
-        //     return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
-        // }
-
-
-        // public async Task<bool> SaveAll()
-        // {
-        //     return await _context.SaveChangesAsync() > 0;
-        // }
-
-        // public async Task<Message> GetMessage(int id)
-        // {
-        //     return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
-        // }
+        public async Task<Message> GetMessage(int id)
+        {
+            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+        }
 
         // public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         // {
@@ -202,17 +145,22 @@ namespace DotNetDatingApp.api.Data
         //     return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         // }
 
-        // public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
-        // {
-        //     var messages = await _context.Messages
-        //         .Where(m => m.RecipientId == userId && m.RecipientDeleted == false
-        //             && m.SenderId == recipientId
-        //             || m.RecipientId == recipientId && m.SenderId == userId
-        //             && m.SenderDeleted == false)
-        //         .OrderByDescending(m => m.MessageSent)
-        //         .ToListAsync();
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        {
+            var messages = await _context.Messages
+                .Where(m => m.RecipientId == userId && m.RecipientDeleted == false
+                    && m.SenderId == recipientId
+                    || m.RecipientId == recipientId && m.SenderId == userId
+                    && m.SenderDeleted == false)
+                .OrderByDescending(m => m.MessageSent)
+                .ToListAsync();
 
-        //     return messages;
-        // }
+            return messages;
+        }
+
+        public Task<PagedList<Message>> GetMessagesForUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
