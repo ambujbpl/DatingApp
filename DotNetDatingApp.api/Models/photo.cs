@@ -10,7 +10,7 @@ namespace DotNetDatingApp.api.Models
         public DateTime dateadded { get; set; }
         public bool ismain { get; set; }
         public string publicId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int UserId { get; set; }
     }
 }

@@ -29,13 +29,13 @@ namespace DotNetDatingApp.api.Data
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.Include(p => p.photos).FirstOrDefaultAsync(u => u.id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.id == id);
             return user; 
         }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.Include(p => p.photos).OrderByDescending(u => u.lastActive).AsQueryable();
+            var users = _context.Users.OrderByDescending(u => u.lastActive).AsQueryable();
 
             users = users.Where(u=> u.id != userParams.UserId);
             
@@ -76,10 +76,7 @@ namespace DotNetDatingApp.api.Data
         }
         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
         {
-            var user = await _context.Users
-                .Include(x => x.Likers)
-                .Include(x => x.Likees)
-                .FirstOrDefaultAsync(u => u.id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.id == id);
 
             if (likers)
             {
@@ -122,10 +119,7 @@ namespace DotNetDatingApp.api.Data
 
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            var messages = _context.Messages
-                .Include(u => u.Sender).ThenInclude(p => p.photos)
-                .Include(u => u.Recipient).ThenInclude(p => p.photos)
-                .AsQueryable();
+            var messages = _context.Messages.AsQueryable();
 
             switch (messageParams.MessageContainer)
             {
@@ -151,8 +145,6 @@ namespace DotNetDatingApp.api.Data
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
             var messages = await _context.Messages
-                .Include(u => u.Sender).ThenInclude(p => p.photos)
-                .Include(u => u.Recipient).ThenInclude(p => p.photos)
                 .Where(m => m.RecipientId == userId && m.RecipientDeleted == false
                     && m.SenderId == recipientId
                     || m.RecipientId == recipientId && m.SenderId == userId
