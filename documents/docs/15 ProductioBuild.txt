@@ -1,0 +1,14 @@
+****** Angular build ******
+------------------------------------
+ng build --prod
+-----------------------------------
+
+
+
+
+
+****** Dotnet Build ******
+-----------------------------------
+dotnet publish -c Release
+-----------------------------------
+dotnet publish --configuration Release
